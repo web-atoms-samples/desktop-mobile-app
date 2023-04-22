@@ -10,4 +10,9 @@ import styled from "@web-atoms/core/dist/style/styled";
         * {
             font-family: verdana;
         }
+
+        :root {
+            --accent-color: blue;
+            --accent-text-color: white;
+        }
     `.installGlobal();

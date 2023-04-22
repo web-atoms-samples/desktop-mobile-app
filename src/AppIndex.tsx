@@ -55,7 +55,7 @@ export default class AppIndex extends AppClass {
         app.menuRenderer = () => <AppMenu/>;
 
         app.statusBarRenderer = () => <div data-layout="row">
-            <div text="Gush"/>
+            <div text="Multi View App"/>
             <div
                 style-margin-left="auto"
                 text="Version 2"/>
