@@ -11,6 +11,7 @@ import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import ThisApp from "./common/ThisApp";
 import XNode from "@web-atoms/core/dist/core/XNode";
 import AppCommands from "./common/AppCommands";
+import InstallAppCommands from "./common/InstallAppCommands";
 
 const AppClass = (/android|iPhone/i.test(navigator.userAgent)
     ? MobileApp
@@ -22,6 +23,7 @@ export default class AppIndex extends AppClass {
 
         PopupService.lastTarget =  this.element;
 
+        InstallAppCommands(this);
 
         (this.app as WebApp).installStyleSheet("/node_modules/@fortawesome/fontawesome-free/css/all.min.css");
 
