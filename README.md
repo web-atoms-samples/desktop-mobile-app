@@ -1,5 +1,5 @@
 # intro
-AtomRepeater control Example
+Desktop and Mobile App Sample
 
 # Start
 
@@ -7,7 +7,7 @@ AtomRepeater control Example
 
 # Open sample in stackblitz.com
 
-https://stackblitz.com/~/github.com/web-atoms-samples/styled-css
+https://stackblitz.com/~/github.com/web-atoms-samples/desktop-mobile-app
 
 The project should automatically install, compile and load a simple http-server to serve the html/css/javascript files from the project.
 

@@ -1,9 +1,10 @@
+import Command from "@web-atoms/core/dist/core/Command";
 import XNode from "@web-atoms/core/dist/core/XNode";
 import styled from "@web-atoms/core/dist/style/styled";
 import { Drawer } from "@web-atoms/web-controls/dist/mobile-app/MobileApp";
 import PageNavigator from "@web-atoms/web-controls/dist/PageNavigator";
+import AppCommands from "../common/AppCommands";
 import HomePage from "../pages/home/Home";
-import LocalStylesPage from "../pages/local/LocalStylesPage";
 
 const css = styled.css `
     cursor: pointer;
@@ -14,11 +15,17 @@ const css = styled.css `
     }
 `.installLocal();
 
-const MenuItem = ({ label, icon = "", page}) => {
+interface IMenuItem {
+    label: string;
+    icon?: string;
+    command: Command;
+}
+
+const MenuItem = ({ label, icon = "", command}: IMenuItem) => {
     return <div
         class={css}
         data-layout="row"
-        event-click={() => PageNavigator.openPage(page)}>
+        event-click={() => command.dispatch()}>
         { icon && <i class={icon}/>}
         <span text={label}/>
     </div>;
@@ -33,12 +40,12 @@ export default class AppMenu extends Drawer {
 
             <MenuItem
                 label="Home"
-                page={HomePage}
+                command={AppCommands.openHome}
                 />
 
             <MenuItem
-                label="Local Styles"
-                page={LocalStylesPage}
+                label="Projects"
+                command={AppCommands.openProjectList}
                 />
 
         </div>;
